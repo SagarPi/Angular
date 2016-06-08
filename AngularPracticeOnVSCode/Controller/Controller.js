@@ -1,6 +1,6 @@
 ﻿/// <reference path="../Module/Module.js" />
 
-app.controller('myController', function ($scope) {
+app.controller('myController', function ($scope, crudService, UIService) {
     $scope.patient = {
         patientId: 0,
         patientName: '',
@@ -10,16 +10,12 @@ app.controller('myController', function ($scope) {
         city: ''
     }; 
     
-    $scope.Patients = [
-        { patientId: 101, patientName: 'abhi', patientAge: 40, gender: 'M', address: 'kothrud', city: 'pune' },
-        { patientId: 102, patientName: 'sagar', patientAge: 25, gender: 'M', address: 'wakad', city: 'pune' },
-        { patientId: 103, patientName: 'priyanka', patientAge: 30, gender: 'F', address: 'bavdhan', city: 'pune' },
-        { patientId: 104, patientName: 'ravi', patientAge: 22, gender: 'M', address: 'miyapur', city: 'hyderadbad' },
-        { patientId: 105, patientName: 'ajinkya', patientAge: 50, gender: 'M', address: 'birdi', city: 'nagpur' }
-    ];
+    $scope.Patients = crudService.getPatientsList;
 
-    $scope.save = SavePatient($scope.Patients, $scope.patient.patientId, $scope.patient.patientName,
-    $scope.patient.patientAge, $scope.patient.gender, $scope.patient.address, $scope.patient.city);
+    $scope.save = function () {
+        
+        crudService.savePatient($scope.Patients, $scope.patient);
+    };
 
     $scope.clear = function () {
 
