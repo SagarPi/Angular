@@ -2,5 +2,5 @@
 var app;
 
 (function () {
-    app = angular.module('appModule', []);
+    app = angular.module('appModule', ['serviceModule']);
 })();

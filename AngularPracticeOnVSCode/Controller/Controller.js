@@ -18,17 +18,8 @@ app.controller('myController', function ($scope) {
         { patientId: 105, patientName: 'ajinkya', patientAge: 50, gender: 'M', address: 'birdi', city: 'nagpur' }
     ];
 
-    $scope.save = function () {
-        $scope.Patients.push({
-            patientId: $scope.patient.patientId,
-            patientName: $scope.patient.patientName,
-            patientAge: $scope.patient.patientAge,
-            gender: $scope.patient.gender,
-            address: $scope.patient.address,
-            city: $scope.patient.city
-        });
-
-    };
+    $scope.save = SavePatient($scope.Patients, $scope.patient.patientId, $scope.patient.patientName,
+    $scope.patient.patientAge, $scope.patient.gender, $scope.patient.address, $scope.patient.city);
 
     $scope.clear = function () {
 
