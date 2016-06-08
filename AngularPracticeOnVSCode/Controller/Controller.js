@@ -8,8 +8,8 @@ app.controller('myController', function ($scope) {
         gender: '',
         address: '',
         city: ''
-    };
-
+    }; 
+    
     $scope.Patients = [
         { patientId: 101, patientName: 'abhi', patientAge: 40, gender: 'M', address: 'kothrud', city: 'pune' },
         { patientId: 102, patientName: 'sagar', patientAge: 25, gender: 'M', address: 'wakad', city: 'pune' },
