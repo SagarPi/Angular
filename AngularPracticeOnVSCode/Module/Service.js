@@ -13,6 +13,16 @@ app.service('crudService', function()
         });
     };
 
+    this.clearPatient = function (patient) {
+        patient.patientId = 0;
+        patient.patientName = '';
+        patient.patientAge = 0;
+        patient.gender = '';
+        patient.address = '';
+        patient.city = '';
+    };
+
+
     this.getPatientsList = [
         { patientId: 101, patientName: 'abhi', patientAge: 40, gender: 'M', address: 'kothrud', city: 'pune' },
         { patientId: 102, patientName: 'sagar', patientAge: 25, gender: 'M', address: 'wakad', city: 'pune' },
