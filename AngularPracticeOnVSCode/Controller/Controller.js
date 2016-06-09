@@ -9,7 +9,7 @@ app.controller('myController', function ($scope, crudService) {
         gender: '',
         address: '',
         city: ''
-    }; 
+    };
     
     $scope.Patients = crudService.getPatientsList;
 
